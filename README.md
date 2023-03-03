@@ -21,6 +21,17 @@ Once logged into the psql shell
 4. Run the application server on dev mode: `npm run dev`
 
 
+## Running on Docker
+
+1. Please execute the following command on the terminal 
+
+Build the image
+`docker build -t blueverse:0.1 `
+
+Run the container with the image
+1. For the first time: `docker run -d --network host --name blueverse blueverse:0.1 `
+2. After that: `docker start blueverse`
+
 Prerequisites: 
     - ts-node 
     - nodemon
