@@ -1,0 +1,52 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: Your API Title
+  description: Your API Description
+servers:
+  - url: http://localhost:3000
+paths:
+  /:
+    get:
+      summary: Get a greeting message
+      responses:
+        '200':
+          description: A successful response content
+          application/json:
+            schema:
+              type: object
+              properties:
+                message:
+                  type: string
+                  example: Hello, world!
+      post:
+        summary: Create a new greeting message
+        requestBody:
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  message:
+                    type: string
+                    example: Hello, world!
+        responses:
+          '200':
+            description: A successful response
+            content:
+              application/json:
+                schema:
+                  type: object
+                  properties:
+                    message:
+                      type: string
+                      example: Greeting message created successfully
+components:
+  schemas:
+    ErrorMessage:
+      type: object
+      properties:
+        error:
+          type: string
+      required:
+        - error
